@@ -90,12 +90,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\SAE INSTITUTE\source\repos\Pacman\ExternalLibs\SDL2-2.0.8\include;C:\Users\SAE INSTITUTE\source\repos\Pacman\ExternalLibs\SDL2_image-2.0.3\include;C:\Users\SAE INSTITUTE\source\repos\Pacman\ExternalLibs\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\ExternalLibs\SDL2-2.0.8\include;..\ExternalLibs\SDL2_image-2.0.3\include;..\ExternalLibs\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\SAE INSTITUTE\source\repos\Pacman\ExternalLibs\SDL2-2.0.8\lib\x86;C:\Users\SAE INSTITUTE\source\repos\Pacman\ExternalLibs\SDL2_image-2.0.3\lib\x86;C:\Users\SAE INSTITUTE\source\repos\Pacman\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\ExternalLibs\SDL2-2.0.8\lib\x86;..\ExternalLibs\SDL2_image-2.0.3\lib\x86;..\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

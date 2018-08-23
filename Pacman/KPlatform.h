@@ -11,57 +11,61 @@
 using namespace std;
 class KGameState;
 
-class KPlatform
+namespace PooEngine
 {
-public:
-	KPlatform(string name);
-	virtual ~KPlatform();
-	virtual bool applicationDidFinishLaunching();
-	/**
-	@brief  The function be called when the application enter background
-	@param  the pointer of the application
-	*/
-	virtual void applicationDidEnterBackground();
 
-	/**
-	@brief  The function be called when the application enter foreground
-	@param  the pointer of the application
-	*/
-	virtual void applicationWillEnterForeground();
+	class KPlatform
+	{
+	public:
+		KPlatform(string name);
+		virtual ~KPlatform();
+		virtual bool applicationDidFinishLaunching();
+		/**
+		@brief  The function be called when the application enter background
+		@param  the pointer of the application
+		*/
+		virtual void applicationDidEnterBackground();
 
-
-
-	int getHeightScreen();
-	int getWidthScreen();
-
-	float getHeightScale();
-	float getWidthScale();
+		/**
+		@brief  The function be called when the application enter foreground
+		@param  the pointer of the application
+		*/
+		virtual void applicationWillEnterForeground();
 
 
 
-	void checkEvent(KGameState *obj, bool (KGameState::*f)(int));
-	void setSizeResourceBackgruound(int fHeight, int fWidth);
+		int getHeightScreen();
+		int getWidthScreen();
 
-	void RenderClear();
-	void RenderImage(Image *image, int x, int y);
-	void RenderPresent();
+		float getHeightScale();
+		float getWidthScale();
 
-	//static Image* CreateImage(std::string name);
-	void renderText(const std::string &message, const std::string &fontFile);
 
-	static SDL_Renderer *renderer;
 
-private:
-	SDL_Texture * renderText(const std::string &message, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *renderer);
-	void renderTexture(Image *tex, int x, int y);
-	void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst);
+		void checkEvent(KGameState *obj, bool (KGameState::*f)(int));
+		void setSizeResourceBackgruound(int fHeight, int fWidth);
 
-	bool bFullScreen;
-	int iHeightScreen;
-	int iWidthScreen;
+		void RenderClear();
+		void RenderImage(Image *image, int x, int y);
+		void RenderPresent();
 
-	int iResourceHeight;
-	int iResourceWidth;
-	SDL_Window *window;
-};
+		//static Image* CreateImage(std::string name);
+		void renderText(const std::string &message, const std::string &fontFile);
+
+		static SDL_Renderer *renderer;
+
+	private:
+		SDL_Texture * renderText(const std::string &message, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *renderer);
+		void renderTexture(Image *tex, int x, int y);
+		void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst);
+
+		bool bFullScreen;
+		int iHeightScreen;
+		int iWidthScreen;
+
+		int iResourceHeight;
+		int iResourceWidth;
+		SDL_Window *window;
+	};
+}
 #endif 
