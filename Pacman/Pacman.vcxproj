@@ -151,15 +151,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KPlatform.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KPlatform.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

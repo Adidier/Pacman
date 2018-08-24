@@ -10,16 +10,9 @@ namespace PooEngine
 	SDL_Renderer *KPlatform::renderer;
 
 	KPlatform::KPlatform(string name) {
-		/*
-		iResourceWidth = 1920;
-		iResourceHeight = 1080;
 
 		iResourceWidth = 640;
 		iResourceHeight = 480;
-		*/
-
-		iResourceWidth = 800;
-		iResourceHeight = 800;
 
 		if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 			std::cout << "SDL_Init";
