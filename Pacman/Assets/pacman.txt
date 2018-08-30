@@ -1,0 +1,9 @@
+2
+idle
+Assets/idle0.png
+Assets/idle1.png
+3
+die
+Assets/die0.png
+Assets/die1.png
+Assets/die2.png

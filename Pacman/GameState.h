@@ -1,14 +1,17 @@
 #pragma once
 #include "KPlatform.h"
 #include "Map.h"
+#include "Player.h"
 
 class GameState {
 private:
-	Map * map;
+	Map *map;
 	PooEngine::KPlatform *platform;
+	Player *player;
+	int frameRate = 0;
 public:
 	void InitGame();
-	void Inputs();
+	int Inputs();
 	void UpdateLogic();
 	void UpdateScreen();
 };
