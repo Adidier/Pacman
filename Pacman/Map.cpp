@@ -22,9 +22,22 @@ Map::Map(std::string name, PooEngine::KPlatform  *platform)
 	empty->LoadImage("Assets/4.png", PooEngine::KPlatform::renderer);
 }
 
+int Map::CheckPellets()
+{
+	for (int i = 0; i < map.size(); i++)
+	{
+		for (int j = 0; j < map[i].size(); j++)
+		{
+			if (map[i][j] == 2)
+				return 0;
+		}
+	}
+	return 1;
+}
+
+
 void Map::Render()
 {
-//	background->getTexture();
 	for (int i=0;i<map.size();i++)
 	{
 		for (int j = 0; j < map[i].size(); j++)
@@ -46,10 +59,23 @@ void Map::Render()
 				case 4:
 					platform->RenderImage(empty, j * 20, i * 20);
 				break;
+				case 6:
+					positionPlayerX=j*20;
+					positionPlayerY=i*20;
+				break;
 			}
 		}
 	}
-	
+}
+
+int Map::GetPosPlayerX()
+{
+	return positionPlayerX;
+}
+
+int Map::GetPosPlayerY()
+{
+	return positionPlayerY;
 }
 
 Map::~Map()
@@ -76,4 +102,19 @@ bool Map::loadMap(std::string name)
 		map.push_back(row);
 	}
 	return true;
+}
+
+int Map::GetTypeTile(int x, int y)
+{
+	if(x>=0 && x<map.size() && y >= 0 && y<map[x].size())
+		return map[x][y];
+
+	return -1;
+}
+
+void Map::SetTypeTile(int x, int y,int type)
+{
+
+	if (x >= 0 && x<map.size() && y >= 0 && y<map[x].size())
+		map[x][y] = type;
 }
