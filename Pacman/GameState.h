@@ -1,14 +1,14 @@
 #pragma once
 #include "KPlatform.h"
 #include "Map.h"
-#include "Player.h"
+#include "Actor.h"
 #include "Ghost.h"
 
 class GameState {
 private:
 	Map *map;
 	PooEngine::KPlatform *platform;
-	Player *player;
+	Actor *player;
 	Ghost *ghostGreen;
 	int frameRate = 0;
 	int directionX = 0;

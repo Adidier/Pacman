@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "GameState.h"
-#include "Player.h"
+#include "Actor.h"
 
 void GameState::InitGame()
 {
 	platform = new PooEngine::KPlatform("Pac-man");
-	player = new Player("Assets/pacman.txt", platform);
+	player = new Actor("Assets/pacman.txt", platform);
 	ghostGreen = new Ghost("Assets/ghost_green.txt", platform);
 
 	map = new Map("Assets/levelBackground.png", platform);
@@ -131,7 +131,7 @@ void GameState::UpdateScreen()
 	map->Render();
 	player->UpdateRender();
 	ghostGreen->UpdateRender();
-	ghostGreen->UpdateLogic(player);
+	ghostGreen->UpdateLogic(player,map);
 	platform->RenderPresent();
 	platform->RenderClear();
 }

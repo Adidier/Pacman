@@ -1,19 +1,19 @@
 #include "stdafx.h"
-#include "Player.h"
+#include "Actor.h"
 #include "Image.h"
 #include "KPlatform.h"
 #include <fstream>
 using namespace std;
 using namespace PooEngine;
 
-Player::Player(std::string name, KPlatform *plat)
+Actor::Actor(std::string name, KPlatform *plat)
 {
 	loadPlayer(name);
 	platform = plat;
 	state = "idle";
 }
 
-int Player::loadPlayer(std::string name)
+int Actor::loadPlayer(std::string name)
 {
 	fstream inputFile;
 	inputFile.open(name.c_str());
@@ -37,32 +37,32 @@ int Player::loadPlayer(std::string name)
 	return 1;
 }
 
-int Player::getWidth()
+int Actor::getWidth()
 {
 	return width;
 }
 
-void Player::setWidth(int newWidth)
+void Actor::setWidth(int newWidth)
 {
 	this->width = newWidth;
 }
 
-int Player::getHeight()
+int Actor::getHeight()
 {
 	return height;
 }
 
-void Player::setHeight(int newHeight)
+void Actor::setHeight(int newHeight)
 {
 	this->height = newHeight;
 }
 
-void Player::setRotation(float rotation)
+void Actor::setRotation(float rotation)
 {
 	this->rotation = rotation;
 }
 
-void Player::UpdateRender()
+void Actor::UpdateRender()
 {
 	platform->RenderImage(animations[state][frame], x, y,rotation); 
 	frame++;

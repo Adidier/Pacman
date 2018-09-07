@@ -8,7 +8,7 @@
 
 using namespace PooEngine;
 
-class Player : public GameObject
+class Actor : public GameObject
 {
 protected:
 	int width;
@@ -18,7 +18,7 @@ protected:
 	std::string state;
 	int frame = { 0 };
 public:
-	Player(std::string name, KPlatform *plat);
+	Actor(std::string name, KPlatform *plat);
 	int loadPlayer(std::string name);
 	int getWidth();
 	void setWidth(int width);

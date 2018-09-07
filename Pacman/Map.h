@@ -4,7 +4,7 @@
 #include <string>
 #include "KPlatform.h"
 #include <vector>
-#include "Player.h"
+#include "Actor.h"
 
 class Map
 {
