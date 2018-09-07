@@ -8,14 +8,11 @@ using namespace PooEngine;
 
 Player::Player(std::string name, KPlatform *plat)
 {
-	//"Images/paddle.png"
-	//image.LoadImage(name, KPlatform::renderer);
-	//SDL_Texture *t = image.getTexture();
 	loadPlayer(name);
 	platform = plat;
 	state = "idle";
-	//SDL_QueryTexture(image.getTexture(), NULL, NULL, &width, &height);
 }
+
 int Player::loadPlayer(std::string name)
 {
 	fstream inputFile;
@@ -40,10 +37,6 @@ int Player::loadPlayer(std::string name)
 	return 1;
 }
 
-Player::~Player()
-{
-}
-
 int Player::getWidth()
 {
 	return width;
@@ -64,10 +57,19 @@ void Player::setHeight(int newHeight)
 	this->height = newHeight;
 }
 
+void Player::setRotation(float rotation)
+{
+	this->rotation = rotation;
+}
+
 void Player::UpdateRender()
 {
-	platform->RenderImage(animations[state][frame], x, y); //obtener la direccion de memoria &
+	platform->RenderImage(animations[state][frame], x, y,rotation); 
 	frame++;
 	if (frame >= animations[state].size())
 		frame = 0;
+
+
+
+
 }

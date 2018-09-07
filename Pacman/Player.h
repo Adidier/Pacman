@@ -19,13 +19,11 @@ protected:
 	int frame = { 0 };
 public:
 	Player(std::string name, KPlatform *plat);
-	Player();
-	~Player();
 	int loadPlayer(std::string name);
 	int getWidth();
 	void setWidth(int width);
 	int getHeight();
 	void setHeight(int height);
-
+	void setRotation(float rotation);
 	void UpdateRender();
 };

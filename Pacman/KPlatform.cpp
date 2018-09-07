@@ -84,6 +84,13 @@ namespace PooEngine
 		//SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 	}
 
+
+	void KPlatform::renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
+	{
+
+		SDL_RenderCopyEx(ren, tex, clip, &dst, angle, center, flip);
+	}
+
 	void KPlatform::renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst) {
 		SDL_RenderCopy(ren, tex, NULL, &dst);
 	}
@@ -95,6 +102,16 @@ namespace PooEngine
 		dst.y = y;
 		SDL_QueryTexture(tex->getTexture(), NULL, NULL, &dst.w, &dst.h);
 		renderTexture(tex->getTexture(), renderer, dst);
+	}
+
+	void KPlatform::renderTexture(Image *tex, int x, int y, double angle)
+	{
+		SDL_Rect dst;
+		dst.x = x;
+		dst.y = y;
+		SDL_QueryTexture(tex->getTexture(), NULL, NULL, &dst.w, &dst.h);
+		renderTexture(tex->getTexture(), renderer, dst, NULL, angle, NULL, SDL_FLIP_NONE);
+
 	}
 
 	void KPlatform::renderText(const std::string &message, const std::string &fontFile)
@@ -150,6 +167,11 @@ namespace PooEngine
 	void KPlatform::RenderImage(Image *image, int x, int y)
 	{
 		renderTexture(image, x, y);
+	}
+
+	void KPlatform::RenderImage(Image *image, int x, int y, double angle)
+	{
+		renderTexture(image, x, y, angle);
 	}
 
 

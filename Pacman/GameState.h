@@ -2,12 +2,14 @@
 #include "KPlatform.h"
 #include "Map.h"
 #include "Player.h"
+#include "Ghost.h"
 
 class GameState {
 private:
 	Map *map;
 	PooEngine::KPlatform *platform;
 	Player *player;
+	Ghost *ghostGreen;
 	int frameRate = 0;
 	int directionX = 0;
 	int directionY = 0;

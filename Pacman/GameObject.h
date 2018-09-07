@@ -13,6 +13,7 @@ class GameObject
 {
 protected:
 	float x, y;
+	float rotation{ 0 };
 	Type type;
 public:
 	void GetPosition(float &x, float &y);

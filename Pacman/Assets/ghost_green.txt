@@ -1,0 +1,6 @@
+1
+idle
+Assets/ghost_green.png
+1
+die
+Assets/ghost_edible.png

@@ -47,6 +47,7 @@ namespace PooEngine
 
 		void RenderClear();
 		void RenderImage(Image *image, int x, int y);
+		void RenderImage(Image *image, int x, int y, double angle);
 		void RenderPresent();
 
 		//static Image* CreateImage(std::string name);
@@ -57,7 +58,9 @@ namespace PooEngine
 	private:
 		SDL_Texture * renderText(const std::string &message, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *renderer);
 		void renderTexture(Image *tex, int x, int y);
+		void renderTexture(Image *tex, int x, int y, double angle);
 		void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst);
+		void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip);
 
 		bool bFullScreen;
 		int iHeightScreen;
